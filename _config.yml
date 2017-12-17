@@ -1,0 +1,19 @@
+title:             许明锋的博客
+email:             13710414456@163.com
+description:       四万万码农中，一位追求自由的码农
+author:            xumingfeng
+baseurl:           "/"
+url:               "http://347255699.github.io"
+
+# Social Profiles
+# twitter_username:  SBootstrap
+github_username:   347255699
+# facebook_username: StartBootstrap
+
+# Build settings
+markdown:          kramdown
+paginate:          5
+paginate_path:     "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2017-12-17-Markdown笔记</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<base href='file:\\\C:\Users\KAM\Desktop\'/>
+</head>
+<body>
+<h1>Markdown笔记</h1>
+<hr />
+<blockquote>
+<p>Markdown的目标是易写易读，Markdown的输出格式就是HTML，本质上是对HTML标签的简化。</p>
+</blockquote>
+<h2>兼容HTML</h2>
+<p>部分区块元素，如 <code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>、<code>&lt;p&gt;</code> 等标签受到制约，必须在前后加上空行与其他内容隔开，且在html块元素中使用markdown语法将视为无效</p>
+<p>其他html元素可以在Markdown中直接使用</p>
+<h2>特殊字符自动转换</h2>
+<p>在HTML中，有两个字符需要特殊处理，<code>&lt;</code> 和 <code>&amp;</code> 。 <code>&lt;</code> 用于HTML起始标签，<code>&amp;</code> 用于标记HTML实体。在Markdown使用这两个字符，会直接转换为对应的HTML实体。如下所：</p>
+<pre><code>&amp;lt;
+&amp;amp;
+</code></pre>
+
+<p>Markdown会自动识别这两个字符是单独使用还是与其他字符一起使用，如下：</p>
+<pre><code>4 &lt; 5
+&amp;nbsp;
+</code></pre>
+
+<p><code>&lt;</code> 可以作为逻辑运算符，Markdown不做转换处理，同样的，<code>&amp;</code>可以作为HTML实体的开头，Markdown也不做转换处理。</p>
+<h2>区块元素</h2>
+<h3>段落和换行</h3>
+<p>一个段落由一个或多个连续的文本行组成，前后需要有一个以上的空行（空行是指包含空格或制表符的一行），普通段落不该用空格和制表符来缩进。</p>
+<p>段落内可以通过标签元素来实现换行或通过在换行出按如两个以上的空格即可实现换行。</p>
+<h3>标题</h3>
+<p>Markdown提供两种标题语法，分别是Setext形式和atx形式，Setext两阶如下：</p>
+<pre><code>H1
+======
+H2
+------
+</code></pre>
+
+<p>atx六阶如下：</p>
+<pre><code># H1
+# H2
+# H3
+# H4
+# H5
+# H6
+</code></pre>
+
+<h3>区块引用 Blockquotes</h3>
+<p>区块通过 <code>&gt;</code> 来引用，区块类似email信件中的引言部分。区块可以仅在段落投加入 <code>&gt;</code> 来引用，也可在每一行的头部加入 <code>&gt;</code>来引用。区块可以嵌套达到多层缩进的效果，如下：</p>
+<pre><code>&gt;   第一层缩进
+&gt;&gt;  第二层缩进
+&gt;&gt;&gt; ...以此类推
+</code></pre>
+
+<p>区块内也可以使用其他Markdown语法，如标题、列表、代码块等。</p>
+<h3>列表</h3>
+<p>Markdown提供有序列表和无序列表，熟悉HTML标签的可以对号入座了。
+ 无序列表可以通过一个空行加 <code>*</code> <code>+</code> <code>-</code> 三个标签的来引用，效果都是一致的。如下：</p>
+<pre><code>* 列表1
++ 列表2
+- 列表3
+</code></pre>
+
+<p>有序列表可以通过一个空行加数字加点加一个空格来引用，如下：</p>
+<pre><code>1. 有序列表1
+2. 有序列表2
+3. 有序列表3
+</code></pre>
+
+<h3>代码区块</h3>
+<p>代码区块需要一个空行和一个制表符或4个空格来引用（<code>&lt;br/&gt;</code>用来标注这是一个空行，无实际意义），如下：</p>
+<pre><code>&lt;br/&gt;
+我是一段代码 
+</code></pre>
+
+<h3>分割线</h3>
+<p>分割线可以通过三个以上的星号、减号、底线来引用（多种风骚写法都可以），如下：</p>
+<pre><code>***
+* * *
+******
+---
+___
+</code></pre>
+
+<h2>区段元素</h2>
+<h3>链接</h3>
+<p>链接可以用行内式和参考式两种。  
+</p>
+<p>行内式通过一个中括号一个括号来引用，中括号中的文字为可点击链接，括号在中的文字为链接地址，此外可以在链接地址后加一个空格和双引号来引用链接标题，如下：</p>
+<pre><code>[我是Google](http//:www.google.com &quot;google&quot;)
+</code></pre>
+
+<p>效果：<a href="http//:www.google.com" title="google">我是Google</a>  
+</p>
+<p>参考式通过一个中括号再加上一个中括号来引用，其中第一个中括号为文字，第二个中括号为辨识链接的标记，标记通过一个中括号，括号里放入标记内容，接着一个冒号，接着一个以上的空格或制表符，接着链接网址，截止选择性的加上双引号或是括号包裹的网址标题如下：</p>
+<pre><code>[我是Googlel][1]
+[1]: http://www.google.com &quot;google&quot;
+</code></pre>
+
+<p>效果：<a href="http://www.google.com" title="google">我是Google</a></p>
+<p>特别地，可以参考标记可以放在页面的任何地方，但不能与链接内容放在同一行，且参考标记会自动隐藏起来。一般建议放在文档的最下方仅供参考。</p>
+<h3>强调</h3>
+<p>通过一对星号或下划线引用，可使字体变为斜体。通过一对各两个星号或下划线引用，可使字体加粗。如下：</p>
+<pre><code>*我是斜体*
+_我是斜体_
+**我是粗体**
+__我是粗体__
+</code></pre>
+
+<p>效果：<em>我是斜体</em>&nbsp;&nbsp;&nbsp;&nbsp;<strong>我是粗体</strong></p>
+<h3>行内代码</h3>
+<p>可以通过一对反引号的引用来标识行内代码，如下：</p>
+<pre><code>`hello world`
+</code></pre>
+
+<p>效果：<code>hello world</code>  
+</p>
+<p>该效果也可做标签，<code>Tag</code></p>
+<h3>图片</h3>
+<p>图片的引用与链接类似，在链接的引用方式前加多一个感叹号即可。  
+</p>
+<p>内联式：</p>
+<pre><code>![图片描述](file:///H:/resource/markdown.png &quot;png&quot;)
+</code></pre>
+
+<p>效果：<img src="file:///H:/resource/markdown.png" alt="图片描述" title="png" /></p>
+<p>参考式：</p>
+<pre><code>![图片描述][2]
+[2]: file:///H:/resource/markdown.png &quot;png&quot;
+</code></pre>
+
+<p>效果：<img src="file:///H:/resource/markdown.png" alt="图片描述" title="png" /></p>
+<blockquote>
+<p><strong>题外话：</strong>上面的图片很好的诠释了Markdown的工作原理，你可以将它当成一种简单的解析语言，Markdown语法会被解析成HTML，而HTML会被渲染出来，从而使文档拥有格式。图中的小老鼠就是你和我啦！，小键盘就是Markdown，大键盘就是HTML啦！Let's 哔哔哔！</p>
+</blockquote>
+<h3>自动连接</h3>
+<p>通过尖括号来引用链接地址或邮箱也能被解析成超链文本。此时的href地址与a标签内的地址是一致。如下：</p>
+<pre><code>&lt;http://www.google.com&gt;
+&lt;347255699@qq.com&gt;
+</code></pre>
+
+<p>效果：<a href="http://www.google.com">http://www.google.com</a> &nbsp;&nbsp;<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x33;&#x34;&#55;&#x32;&#x35;5&#54;&#x39;&#x39;&#x40;&#113;&#113;.&#99;&#111;&#109;">&#x33;&#x34;&#x37;&#x32;&#x35;&#53;&#54;&#57;&#57;&#64;q&#113;&#x2e;&#99;&#x6f;&#109;</a>  
+</p>
+<blockquote>
+<p><strong>题外话：</strong>以上qq郵箱为笔者的邮箱，对文章有啥疑问或有好的建议可以通过该邮箱反馈给笔者哦！</p>
+</blockquote>
+<h3>反斜杠</h3>
+<p>Markdown语法中用到的任何符号都可以通过在符号前加一个反斜杠来转换成普通文本符号。符号列表如下：</p>
+<ul>
+<li>\   反斜线</li>
+<li>`   反引号</li>
+<li>*   星号</li>
+<li>_   底线</li>
+<li>{}  花括号</li>
+<li>[]  方括号</li>
+<li>()  括弧</li>
+<li>#   井字号</li>
+<li>+   加号</li>
+<li>-   减号</li>
+<li>.   英文句点</li>
+<li>!   惊叹号</li>
+</ul>
+<blockquote>
+<p>该文章为笔者通过阅读 <a href="http://wowubuntu.com/markdown/index.html#link" title="Markdown">Markdown 语法说明 (简体中文版)</a> 后的简化总结，详细可以戳入该处阅读。</p>
+</blockquote>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
