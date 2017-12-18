@@ -21,8 +21,7 @@ background: '/img/bg-post.jpg'
       {% else %}
         {{ site.author }}
       {% endif %}
-      编写于 {{ post.date | date: '%B %d, %Y' }}&nbsp;&nbsp;评论数：
-      <a href="{{ post.url }}index.html#disqus_thread" data-disqus-identifier="{{post.url}}"></a></p>
+      编写于 {{ post.date | date: '%B %d, %Y' }}&nbsp;&nbsp;<a href="{{ post.url }}index.html#disqus_thread" data-disqus-identifier="{{post.url}}"></a></p>
   </article>
 
   <hr>
