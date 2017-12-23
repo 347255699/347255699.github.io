@@ -28,7 +28,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 /* BODY
 =============================================================================*/
 
-body {
+.container {
   font-family: Helvetica, arial, freesans, clean, sans-serif;
   font-size: 14px;
   line-height: 1.6;
@@ -39,11 +39,11 @@ body {
   margin: 0 auto;
 }
 
-body>*:first-child {
+.container>*:first-child {
   margin-top: 0 !important;
 }
 
-body>*:last-child {
+.container>*:last-child {
   margin-bottom: 0 !important;
 }
 
@@ -57,7 +57,7 @@ p, blockquote, ul, ol, dl, table, pre {
 /* HEADERS
 =============================================================================*/
 
-h1, h2, h3, h4, h5, h6 {
+.container h1,.container h2,.container h3,.container h4,.container h5,.container h6 {
   margin: 20px 0 10px;
   padding: 0;
   font-weight: bold;
@@ -68,30 +68,30 @@ h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, 
   font-size: inherit;
 }
 
-h1 {
+.container h1 {
   font-size: 28px;
   color: #000;
 }
 
-h2 {
+.container h2 {
   font-size: 24px;
   border-bottom: 1px solid #ccc;
   color: #000;
 }
 
-h3 {
+.container h3 {
   font-size: 18px;
 }
 
-h4 {
+.container h4 {
   font-size: 16px;
 }
 
-h5 {
+.container h5 {
   font-size: 14px;
 }
 
-h6 {
+.container h6 {
   color: #777;
   font-size: 14px;
 }
@@ -299,6 +299,7 @@ img {
 <base href='file:\\\C:\Users\KAM\Desktop\'/>
 </head>
 <body>
+<div class="container">
 <h1>Git笔记一</h1>
 <hr />
 <blockquote>
@@ -396,7 +397,7 @@ $ git reset --hard HEAD~100
 <blockquote>
 <p>本博文为<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" title="廖雪峰Git教程">廖雪峰Git教程</a>的学习简化笔记，详细知识点可参见该教程。</p>
 </blockquote>
-
+</div>
 </body>
 </html>
 <!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

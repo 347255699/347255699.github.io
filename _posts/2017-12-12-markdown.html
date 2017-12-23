@@ -28,7 +28,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 /* BODY
 =============================================================================*/
 
-body {
+.container {
   font-family: Helvetica, arial, freesans, clean, sans-serif;
   font-size: 14px;
   line-height: 1.6;
@@ -39,11 +39,11 @@ body {
   margin: 0 auto;
 }
 
-body>*:first-child {
+.container>*:first-child {
   margin-top: 0 !important;
 }
 
-body>*:last-child {
+.container>*:last-child {
   margin-bottom: 0 !important;
 }
 
@@ -57,7 +57,7 @@ p, blockquote, ul, ol, dl, table, pre {
 /* HEADERS
 =============================================================================*/
 
-h1, h2, h3, h4, h5, h6 {
+.container h1,.container h2,.container h3,.container h4,.container h5,.container h6 {
   margin: 20px 0 10px;
   padding: 0;
   font-weight: bold;
@@ -113,12 +113,12 @@ h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
 /* LINKS
 =============================================================================*/
 
-a {
+.container a {
   color: #4183C4;
   text-decoration: none;
 }
 
-a:hover {
+.container a:hover {
   text-decoration: underline;
 }
 
@@ -299,6 +299,7 @@ img {
 <base href='file:\\\C:\Users\KAM\Desktop\Markdown\post\'/>
 </head>
 <body>
+<div class="container">
 <h1>Markdown笔记</h1>
 <hr />
 <blockquote>
@@ -458,7 +459,7 @@ __我是粗体__
 <blockquote>
 <p>该文章为笔者通过阅读 <a href="http://wowubuntu.com/markdown/index.html#link" title="Markdown">Markdown 语法说明 (简体中文版)</a> 后的简化总结，详细可以戳入该处阅读。</p>
 </blockquote>
-
+</div>
 </body>
 </html>
 <!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
