@@ -12,10 +12,8 @@ comments: true
 <p>git是一款十分火热的分布式版本控制系统，它能用于管理内容修改，无论是文章内容的修改还是代码内容的修改。</p>
 </blockquote>
 <h2>Git简介</h2>
-<hr />
 <p>git提供了去中心化的分布式版本库管理，即每个人的本地版本库都可以作为核心版本库。当然为了方便多人协作修改也提供了远程版本库用于提交自己的修改和更新别人的修改。git同时提供了强大快速的分支切换和合并功能，让分支管理变得十分快速和简单。还有git管理的是一个个修改，一个修改可以作为一个小版本，小版本之间可以快速的回退和前进。</p>
 <h2>安装</h2>
-<hr />
 <p>笔者是在Windows上学习git，因此以在Windows上安装Git为实例。Windows上安装Git可以从<a href="https://git-scm.com/downloads" title="Git">Git官网下载</a>,(笔者架了天梯去下载，下载速度还算正常，若下载慢或无法下载可以另寻下载源)安装完成后，在任一文件夹中右键点击Git Bash Here即可弹出git命令行窗口。
  如下图所示：
  <img src="/img/posts/window.png" alt="git命令行窗口" title="git命令行窗口" /></p>
@@ -26,7 +24,6 @@ $ git config -global user.email &quot;kam@163.com&quot;
 
 <p>注意：若仅对单个版本控制仓库指定用户名和email可以去掉-global参数</p>
 <h2>创建版本库</h2>
-<hr />
 <p>你可以选择一个合适位置即一个文件夹作为一个版本库，在该文件夹中右击Git Bash Here 键入<code>init</code>命令来初始化一个版本库（笔者选择H盘的demo_repository作为版本库）。</p>
 <pre><code>$ git init
 Initialized empty Git repository in H:/demo_repository/.git/
@@ -34,7 +31,6 @@ Initialized empty Git repository in H:/demo_repository/.git/
 
 <p>注意：版本库创建成功后会在文件夹根目录创建一个.git文件夹，需要勾选<code>查看隐藏文件</code>才能看到。</p>
 <h2>git版本库的工作原理</h2>
-<hr />
 <h3>如何管理修改</h3>
 <blockquote>
 <p>git对内容修改的管理主要通过两个步骤来实现。</p>
@@ -44,7 +40,8 @@ Initialized empty Git repository in H:/demo_repository/.git/
 </code></pre>
 
 <p>注意：添加文件和删除文件也算作一个修改，修改是以整个版本库工作区为准的。还可通过<code>add .</code>命令来提交当前工作区的所有修改至暂存区中（比较实用的一个命令）。
-Step2，通过<code>commit</code>命令将暂存区的修改内容一次性添加至分支上。可以添加一个<code>-m</code>参数来描述修改。</p>
+</p>
+<p>Step2，通过<code>commit</code>命令将暂存区的修改内容一次性添加至分支上。可以添加一个<code>-m</code>参数来描述修改。</p>
 <pre><code>$ git commit -m &quot;我添加了一个Readme.txt文件&quot;
 </code></pre>
 
@@ -59,7 +56,6 @@ Step2，通过<code>commit</code>命令将暂存区的修改内容一次性添�
 <img src="/img/posts/add-after.png" alt="工作区修改后添加至暂存区后" title="工作区修改后添加至暂存区后" /><br />
 <img src="/img/posts/commit-after.png" alt="合并暂存区修改提交至分支后" title="合并暂存区修改提交至分支后" /></p>
 <h2>版本回退</h2>
-<hr />
 <blockquote>
 <p>上文中，我们提到一个commit就是一个版本，因此我们可以在多个版本间前进和回退。</p>
 </blockquote>
@@ -85,7 +81,6 @@ $ git reset --hard HEAD~100
 </code></pre>
 
 <h2>撤销修改</h2>
-<hr />
 <blockquote>
 <p>人都是不完美，那不完美就会犯错误，但是git提供了一些补救措辞可以让我们撤销修改。</p>
 </blockquote>
