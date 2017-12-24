@@ -20,5 +20,123 @@
   <link rel="stylesheet" href="{{"/assets/main.css" | relative_url }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+  <style type="text/css">
 
+  	/* QUOTES
+	=============================================================================*/
+
+	.posts-container blockquote {
+	  border-left: 3px solid #DDD;
+	  padding: 0 15px;
+	  color: #777;
+	  margin: 15px 0;
+	}
+
+	.posts-container blockquote>:first-child {
+	  margin-top: 0px;
+	}
+
+	.posts-container blockquote>:last-child {
+	  margin-bottom: 0px;
+	}
+
+	/* HORIZONTAL RULES
+	=============================================================================*/
+
+	.posts-container hr {
+	  clear: both;
+	  margin: 15px 0;
+	  height: 0px;
+	  overflow: hidden;
+	  border: none;
+	  background: transparent;
+	  border-bottom: 3px solid #ddd;
+	  padding: 0;
+	}
+
+	/* HEADER
+	=============================================================================*/
+
+	.posts-container h1,.posts-container h3,.posts-container h4,.posts-container h5,.posts-container h6{
+	  margin: 20px 0 10px;
+	}
+
+	.posts-container h2 {
+	  padding: 0 0 10px 0;
+	  margin: 20px 0 10px;
+	  border-bottom: 1px solid #ccc;
+	}
+
+	/* CODE
+	=============================================================================*/
+
+	.posts-container pre, .posts-container code, .posts-container tt {
+	  font-size: 12px;
+	  font-family: Consolas, "Liberation Mono", Courier, monospace;
+	  overflow-x: hidden; 
+	  overflow-y: auto;
+	}
+
+	.posts-container code, .posts-container tt {
+	  margin: 0 0px;
+	  padding: 0px 0px;
+	  white-space: nowrap;
+	  border: 1px solid #eaeaea;
+	  background-color: #f6f8fa;
+	  border-radius: 3px;
+	}
+
+	.posts-container pre>code {
+	  margin: 0;
+	  padding: 0;
+	  white-space: pre;
+	  border: none;
+	  background: transparent;
+	}
+
+	.posts-container pre {
+	  background-color: #f6f8fa;
+	  font-size: 13px;
+	  line-height: 25px;
+	  overflow: auto;
+	  padding: 12px 20px;
+	  border-radius: 3px;
+	}
+
+	.posts-container pre code, .posts-container pre tt {
+	  background-color: transparent;
+	  border: none;
+	}
+
+	.posts-container kbd {
+	    -moz-border-bottom-colors: none;
+	    -moz-border-left-colors: none;
+	    -moz-border-right-colors: none;
+	    -moz-border-top-colors: none;
+	    background-color: #DDDDDD;
+	    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+	    background-repeat: repeat-x;
+	    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+	    border-image: none;
+	    border-radius: 2px 2px 2px 2px;
+	    border-style: solid;
+	    border-width: 1px;
+	    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	    line-height: 10px;
+	    padding: 1px 4px;
+	}
+	
+	/* LINKS
+	=============================================================================*/
+
+	.posts-container a {
+	  color: #4183C4;
+	  text-decoration: none;
+	}
+
+	.posts-container a:hover {
+	  text-decoration: underline;
+	}
+
+  </style>
 </head>
