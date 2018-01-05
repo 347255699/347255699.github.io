@@ -30,7 +30,7 @@ comments: true
 &nbsp;&nbsp;&nbsp;&nbsp; <a href="#同步&amp;合并远程分支上的修改" title="同步&amp;合并远程分支上的修改">同步&amp;合并远程分支上的修改</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp; <a href="#推送本地更新至远程分支" title="推送本地更新至远程分支">推送本地更新至远程分支</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp; <a href="#本地分支与远程分支的关联" title="本地分支与远程分支的关联">本地分支与远程分支的关联</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp; <a href="#远程仓库提交历史的偏离" title="远程仓库提交历史的偏离">远程分支提交历史的偏离</a></li>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="#远程分支提交历史的偏离" title="远程分支提交历史的偏离">远程分支提交历史的偏离</a></li>
 </ul>
 <h2><a name="分支的创建&amp;合并">分支的创建&amp;合并</a></h2>
 <blockquote>
@@ -158,7 +158,7 @@ comments: true
 <blockquote>
 <p>注意：由于远程分支是基于Master分支最新的Commit即C4修改，即远程分支新增了一个C5Commit，因此采用merge合并时仅需要将Master分支指针指向最新的C5Commit即可(fast-forward方式)。</p>
 </blockquote>
-<h3><a name="">推送本地更新至远程分支</a></h3>
+<h3><a name="推送本地更新至远程分支">推送本地更新至远程分支</a></h3>
 <p>我们可以通过键入<code>git push</code>命令来推送我们本地修改至远程分支上。<code>push</code>实际上将我们的修改推送到远程仓库上的分支后，同时会更新本地远程分支并将远程分支指向最新的Commit上。<code>push</code>在时间线上的表示如下：</p>
 <p><img src="/img/git/push.png" alt="push示意图" title="push示意图" /></p>
 <h3><a name="本地分支与远程分支的关联">本地分支与远程分支的关联</a></h3>
@@ -168,7 +168,7 @@ comments: true
 <p>这种关联关系其实是由&quot;remote tracking&quot;属性决定，若通过clone去克隆远程仓库的分支时，git会自动在本地建立这种隐含的关联关系。如本地Master和远程Master,git会设定本地Master去追踪远程Master。当然这种关系也可以由我们手动去设置。在创建和切换到新分支时，<br />
 通过键入<code>git checkout -b &lt;本地分支名称&gt; &lt;远程分支名称&gt;</code>，如<code>git checkout -b side origin/master</code>来设置这种关联关系。这样就能让side分支去跟踪远程Master分支了。<br />
 通过上述的命令，我们就能顺利与远程仓库进行通信了。</p>
-<h3><a name="远程仓库提交历史的偏离">远程仓库提交历史的偏离</a></h3>
+<h3><a name="远程分支提交历史的偏离">远程分支提交历史的偏离</a></h3>
 <p>当远程仓库不只与一个人通信时，就有可能会造成提交历史偏离。如下一个例子，当你与另外一个人同时基于远程仓库的现有版本进行新功能开发或bug修复时，此时另外一个人进行的是bug修复，会改动原先的代码。而你进行的则是新功能开发。而另一个人修改的代码正好与你开发的新功能重叠（假设你的新功能是建立在某些现有API之上的，刚好这部分的API被另一个人改动了，并且比你先提交至远程分支上。）时就会造成提交历史偏离。这时你的新功能开发完成后，想通过push进行提交，你会发现提交不了，并且git会提示你拉取这部分代码(另一个人的修改)，在本地与你的代码进行合并(若出现冲突，需要我们手动去删选这部分重叠的代码)。当然git会在冲突的代码处给出提示，至于是什么样的提示要由你自己去实践看看了。</p>
 <blockquote>
 <p>至此我们已经能够顺利使用git与他人进行协作开发了。当然git还有一些小技巧没有介绍。特别是深刻了解HEAD和分支指针，将在下一章提及。本文是基于<a href="https://learngitbranching.js.org/" title="learning git branch">learning git branch</a>游戏的体验结合相关教程的总结。</p>
