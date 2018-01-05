@@ -2,7 +2,7 @@
 layout: post
 title:  "Git第二章"
 date:   2018-01-05 23:09:13 -0400
-background: '/img/posts/07.jpg'
+background: '/img/posts/01.jpg'
 comments: true
 ---
 <h1>Git第二章</h1>
@@ -38,12 +38,12 @@ comments: true
 </blockquote>
 <h3><a name="最小单位">最小单位</a></h3>
 <p>分支的最小单位是一个Commit，我们可以在多个Commit中快速的后退和前进。因此在Commit提交时一定要带上描述参数<code>-m</code>，用合适的描述来说明提交Commit修改了什么内容。假设我们在提交了两个Commit后(提交命令为<code>git commit -m &quot;修改描述&quot;</code>)，即C1和C2，再提交一个C3，将这些Commit放在时间线上的变化大概是这样的：</p>
-<p><img src="/img/git/commit.png" alt="Commit示意图" title="Commit示意图" /></p>
+<img src="/img/git/commit.png" alt="Commit示意图" title="Commit示意图" />
 <blockquote>
 <p>注意：该图中会出现两个指针，HEAD和Master，HEAD指针指向的是我们当前工作空间，Master指针标识的是当前该分支上的最新一个Commit。而HEAD指针指向Master指针，则标识我们当前的工作空间是在Master分支上的最新一个Commit开始修改。像C1这样的标识在图中只是缩写，在实际环境中会替换成一串很长的Commit ID。</p>
 </blockquote>
 <p>那版本回退又是怎么样的呢，我们从提交C3回退至C2(回退命令为<code>git reset HEAD^</code>),版本回退在时间线上的变化大概是这样的：</p>
-<p><img src="/img/git/reset.png" alt="回退示意图" title="回退示意图" /></p>
+<img src="/img/git/reset.png" alt="回退示意图" title="回退示意图" />
 <blockquote>
 <p>注意：我们当前工作空间会从Master分支上的C3回退到C2。图中其实会发生两个变化，一个是Master指针会从C3指向C2，第二个是HEAD会跟着指向Master分支指针。版本的前进与回退相似，这里就不再演示了。</p>
 </blockquote>
@@ -53,12 +53,12 @@ comments: true
 </p>
 </blockquote>
 <p>git创建分支可以通过键入<code>git branch &lt;分支名称&gt;</code>来完成。假设我们已经在分支上提交了三个Commit，接下来我们在最新的Commit C3上创建一个分支<code>Dev</code>，在时间线上的变化如下：</p>
-<p><img src="/img/git/branch-create.png" alt="分支创建示意图" title="分支创建示意图" /></p>
+<img src="/img/git/branch-create.png" alt="分支创建示意图" title="分支创建示意图" />
 <h3><a name="切换分支">切换分支</a></h3>
 <p>在git中切换分支不过是改变指针的指向，即将HEAD指针指向我们创建的分支指针上。如切换至上文创建的<code>Dev</code>，键入命令<code>git checkout Dev</code>分支在时间线上的变化如下：</p>
-<p><img src="/img/git/switch-branch.png" alt="分支切换示意图" title="分支切换示意图" /></p>
+<img src="/img/git/switch-branch.png" alt="分支切换示意图" title="分支切换示意图" />
 <p>接下来我们在上文的基础上分别在<code>Dev</code>分支上提交一个Commit，然后切换回<code>Master</code>分支后再提交一个Commit，在时间线上的变化如下：</p>
-<p><img src="/img/git/switch&amp;commit.png" alt="分支切换和提交" title="分支切换和提交" /></p>
+<img src="/img/git/switch&amp;commit.png" alt="分支切换和提交" title="分支切换和提交" />
 <blockquote>
 <p>我们还可以通过<code>git checkout -b &lt;分支名称&gt;</code>命令同时执行创建和切换两条命令。</p>
 </blockquote>
@@ -81,14 +81,17 @@ comments: true
 <p>第二种情况：合并的目标分支是在当前分支的旧Commit基础上创建的，并且比主分支的最新Commit新提交了一个或多个Commit，git会采用非fast-forward方式合并分支内容。非fast-forward方式会尝试将两个分支上不同的commit合并一起后自动提交一个新的commit。如将上文的<code>Dev</code>分支上的改动合并到<code>Master</code>分支上，形成提交树。在提交树上大概是这样的。</p>
 </li>
 </ol>
-<p><img src="/img/git/merge.png" alt="Merge分支合并示意图" title="Merge分支合并示意图" /></p>
+<img src="/img/git/merge.png" alt="Merge分支合并示意图" title="Merge分支合并示意图" />
 <blockquote>
-<p>注意：用命令<code>merge</code>合并分支，需要先通过<code>checkout</code>命令切换到主分支上。合并完成后，可以通过<code>git branch -d &lt;分支名称&gt;</code>来删除无用的分支。</p>
+<p>
+注意：用命令<code>merge</code>合并分支，需要先通过<code>checkout</code>命令切换到主分支上。合并完成后，可以通过<code>git branch -d &lt;分支名称&gt;</code>来删除无用的分支。
+图中带`C4'`号的Commit仅是为了更加鲜明的表示分支合并的变化，实际上还是指向`C4`。
+</p>
 </blockquote>
 <h4><a name="合并分支的两种命令">合并分支的两种命令</a></h4>
 <p>分支合并可以通过<code>git merge &lt;从分支名称&gt;</code>和<code>git rebase &lt;主分支名称&gt;</code>命令来完成。前面已经介绍了<code>merge</code>命令，接下来我们来使用<code>rebase</code>。<br />
 上文中Merge合并示意图中我们会看到，<code>Master</code>分支会将<code>Dev</code>分支上的内容合并到自己的Commit时间线上，从而形成Commit提交树。而通过Rebase合并则不会形成Commit提交树，而是让不同分支上的Commit合并到同一条时间线上，就像是在同一条分支上开发的一样。如通过Rebase方式将<code>Dev</code>合并到<code>Master</code>分支上。在时间线上大概是这样的。</p>
-<p><img src="/img/git/rebase.png" alt="Rebase分支合并示意图" title="Rebase分支合并示意图" /></p>
+<img src="/img/git/rebase.png" alt="Rebase分支合并示意图" title="Rebase分支合并示意图" />
 <blockquote>
 <p>注意：用命令<code>rebase</code>合并分支，需要先通过<code>checkout</code>命令切换到从分支上。Rebase合并方式的缺点是在时间线上的提交并不是顺序的。</p>
 </blockquote>
@@ -128,25 +131,25 @@ comments: true
 <blockquote>
 <p>注意：该命令中<code>-C</code>参数为大写，将<code>&quot;youremail@163.com&quot;</code>更换为你在上文中（<a href="https://347255699.github.io/2017/12/23/git.html" title="Git第一章">Git第一章</a>）中注册的邮箱标识。然后一路回车即可，无需设置密码。</p>
 </blockquote>
-<p>命令运行完成后会在我们C盘用户目录下生成一个<code>.ssh</code>文件夹，该文件夹下会存在两个文件。<code>id_rsa</code>和<code>id_rsa.pub</code>，分别为SSH私钥和公钥。而我们需要将公钥中的内容配置到github网站上才能开始创建远程仓库。github上的SSH Key配置位置为：<code>个人头像/Settings/SSH and GPG Keys/New SSH Key</code>。如下图所示：</p>
-<p><img src="/img/git/ssh-key.png" alt="SSH Key添加示意图" title="Key添加示意图" /></p>
+<p>命令运行完成后会在我们C盘用户目录下生成一个<code>.ssh</code>文件夹，该文件夹下会存在两个文件。<code>id_rsa</code>和<code>id_rsa.pub</code>，分别为SSH私钥和公钥。而我们需要将公钥中的内容配置到github网站上才能开始创建远程仓库。github上的SSH Key配置位置为：个人头像/Settings/SSH and GPG Keys/New SSH Key。如下图所示：</p>
+<img src="/img/git/ssh-key.png" alt="SSH Key添加示意图" title="Key添加示意图" />
 <p>创建远程仓库，在github首页点击New repository即可创建我们的远程仓库。如下所示：</p>
-<p><img src="/img/git/repository-create.png" alt="远程仓库创建示意图" title="远程仓库创建示意图" /></p>
+<img src="/img/git/repository-create.png" alt="远程仓库创建示意图" title="远程仓库创建示意图" />
 <blockquote>
 <p>注意：可以勾选<code>Initialize this repository with a README</code>来创建项目描述文件（可以用markdown语法来编写项目介绍内容）</p>
 </blockquote>
 <p>创建完成后的可视化远程仓库：</p>
-<p><img src="/img/git/repository-ui.png" alt="可视化远程仓库示意图" title="可视化远程仓库示意图" /></p>
+<img src="/img/git/repository-ui.png" alt="可视化远程仓库示意图" title="可视化远程仓库示意图" />
 <h3><a name="克隆远程分支">克隆远程分支</a></h3>
 <p>git中可以通过键入<code>git clone &lt;git远程仓库地址&gt;</code>命令在本地克隆远程仓库，远程仓库克隆完成后，git会自动在本地为我们创建远程分支。表现在时间线上大概是这样的。</p>
-<p><img src="/img/git/clone.png" alt="clone示意图" title="clone示意图" /></p>
+<img src="/img/git/clone.png" alt="clone示意图" title="clone示意图" />
 <blockquote>
 <p>git默认将远程仓库取名为Origin。</p>
 </blockquote>
 <p>我们在本地是无法在origin/master分支中提交Commit的，origin/master只由在远程仓库中对应的分支更新，才会更新。若我们通过<code>checkout</code>命令切换至origin/master后提交Commit,会使得HEAD指针与分支指针分离(该概念会在下一章中提及)。远程分支实际上反应了最近与远程仓库通讯后的状态。</p>
 <h3><a name="同步远程分支上的修改">同步远程分支上的修改</a></h3>
 <p>我们可以通过键入<code>git fetch</code>命令与远程仓库取得通信，fetch命令会扫描远程仓库上对应的分支和本地远程分支的差异，将远程仓库分支上的更新同步至本地远程分支，并将本地远程分支指针指向最新的Commit。但不会将最新的Commit合并到本地Master分支上，也不会移动Master分支的指针。表现在时间线上大概是这样的。</p>
-<p><img src="/img/git/fetch.png" alt="fetch示意图" title="fetch示意图" /></p>
+<img src="/img/git/fetch.png" alt="fetch示意图" title="fetch示意图" />
 <p>那么如何将远程分支上的更新同步到本地Master分支上呢？当然是通过合并分支了。如我们上文提及的<code>merge</code>和<code>rebase</code>。</p>
 <blockquote>
 <p>注意：与远程分支的通信不一定是远程Master分支，也可以是其他分支。可通过键入<code>git fetch &lt;远程仓库名&gt;&lt;远程分支名&gt;</code>来与远程仓库上的其他分支进行通信。下文中的<code>pull</code>和<code>push</code>命令也是如此。</p>
@@ -154,13 +157,13 @@ comments: true
 <h3><a name="同步&amp;合并远程分支上的修改">同步&amp;合并远程分支上的修改</a></h3>
 <p>同步和合并远程分支上的修改可以通过键入<code>git pull</code>命令来完成。pull命令其实就是合并了上文中同步远程分支更新的两个步骤，即通过<code>fetch</code>命令将更新同步到远程分支，再将远程分支的更新合并到Master分支中。
 <code>pull</code>命令默认通过<code>merge</code>来合并本地分支和远程分支。也可以通过<code>--rebase</code>参数来指定合并方式。上文我们已经介绍了merge和rebase的区别。<code>pull</code>命令在时间线上的变化如下。</p>
-<p><img src="/img/git/pull.png" alt="pull示意图" title="pull示意图" /></p>
+<img src="/img/git/pull.png" alt="pull示意图" title="pull示意图" />
 <blockquote>
 <p>注意：由于远程分支是基于Master分支最新的Commit即C4修改，即远程分支新增了一个C5Commit，因此采用merge合并时仅需要将Master分支指针指向最新的C5Commit即可(fast-forward方式)。</p>
 </blockquote>
 <h3><a name="推送本地更新至远程分支">推送本地更新至远程分支</a></h3>
 <p>我们可以通过键入<code>git push</code>命令来推送我们本地修改至远程分支上。<code>push</code>实际上将我们的修改推送到远程仓库上的分支后，同时会更新本地远程分支并将远程分支指向最新的Commit上。<code>push</code>在时间线上的表示如下：</p>
-<p><img src="/img/git/push.png" alt="push示意图" title="push示意图" /></p>
+<img src="/img/git/push.png" alt="push示意图" title="push示意图" />
 <h3><a name="本地分支与远程分支的关联">本地分支与远程分支的关联</a></h3>
 <p>在上文中提及的<code>pull</code>和<code>push</code>能够体现出本地分支和远程分支的关联。
 * <code>pull</code>，提交记录会先被同步到远程分支上，再自动合并到本地分支上。隐含的合并目标分支由这个关联决定。
