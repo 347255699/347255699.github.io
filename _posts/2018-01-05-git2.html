@@ -159,15 +159,15 @@ comments: true
 <code>pull</code>命令默认通过<code>merge</code>来合并本地分支和远程分支。也可以通过<code>--rebase</code>参数来指定合并方式。上文我们已经介绍了merge和rebase的区别。<code>pull</code>命令在时间线上的变化如下。</p>
 <img src="/img/git/pull.png" alt="pull示意图" title="pull示意图" />
 <blockquote>
-<p>注意：由于远程分支是基于Master分支最新的Commit即C4修改，即远程分支新增了一个C5Commit，因此采用merge合并时仅需要将Master分支指针指向最新的C5Commit即可(fast-forward方式)。</p>
+<p>注意：由于远程分支是基于Master分支最新的Commit即C3修改，即远程分支新增了一个C4Commit，因此采用merge合并时仅需要将Master分支指针指向最新的C4Commit即可(fast-forward方式)。</p>
 </blockquote>
 <h3><a name="推送本地更新至远程分支">推送本地更新至远程分支</a></h3>
 <p>我们可以通过键入<code>git push</code>命令来推送我们本地修改至远程分支上。<code>push</code>实际上将我们的修改推送到远程仓库上的分支后，同时会更新本地远程分支并将远程分支指向最新的Commit上。<code>push</code>在时间线上的表示如下：</p>
 <img src="/img/git/push.png" alt="push示意图" title="push示意图" />
 <h3><a name="本地分支与远程分支的关联">本地分支与远程分支的关联</a></h3>
-<p>在上文中提及的<code>pull</code>和<code>push</code>能够体现出本地分支和远程分支的关联。
-* <code>pull</code>，提交记录会先被同步到远程分支上，再自动合并到本地分支上。隐含的合并目标分支由这个关联决定。
-* <code>push</code>，我们将本地更新提交至远程仓库分支上时，会同时更新本地的远程分支。隐含的更新本地的远程分支也是由这个关联决定的。</p>
+<p>在上文中提及的<code>pull</code>和<code>push</code>能够体现出本地分支和远程分支的关联。</p>
+<ul><li><code>pull</code>，提交记录会先被同步到远程分支上，再自动合并到本地分支上。隐含的合并目标分支由这个关联决定。</li>
+  <li><code>push</code>，我们将本地更新提交至远程仓库分支上时，会同时更新本地的远程分支。隐含的更新本地的远程分支也是由这个关联决定的。</li></ul>
 <p>这种关联关系其实是由&quot;remote tracking&quot;属性决定，若通过clone去克隆远程仓库的分支时，git会自动在本地建立这种隐含的关联关系。如本地Master和远程Master,git会设定本地Master去追踪远程Master。当然这种关系也可以由我们手动去设置。在创建和切换到新分支时，<br />
 通过键入<code>git checkout -b &lt;本地分支名称&gt; &lt;远程分支名称&gt;</code>，如<code>git checkout -b side origin/master</code>来设置这种关联关系。这样就能让side分支去跟踪远程Master分支了。<br />
 通过上述的命令，我们就能顺利与远程仓库进行通信了。</p>
